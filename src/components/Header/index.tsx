@@ -12,8 +12,8 @@ const Header: React.FC = () => {
         <img src={logo} alt="Logo" />
 
         <Link to="/">
-          <MdArrowBack size={23} color="#333" />
-          Voltar
+          <MdArrowBack />
+          Voltar para a home
         </Link>
       </header>
     </Container>

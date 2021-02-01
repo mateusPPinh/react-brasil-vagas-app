@@ -8,6 +8,8 @@ import api from '../../services/api';
 interface UserRequest {
   title: string;
   url: string;
+  number: string;
+  html_url: string;
   user: {
     avatar_url: string;
     login: string;
@@ -35,15 +37,13 @@ const JobsRepository: React.FC = () => {
         <CardsContainer>
           {userData.map(datas => (
             <Card key={datas.url}>
-              <Link to="/">
+              <Link to={`/details/${datas.number}`}>
                 <div>
                   <img src={datas.user.avatar_url} alt="" />
                   <span>
                     Usuário(a) que divulgou a vaga: <b>{datas.user.login}</b>
                   </span>
                   <p>Vaga: {datas.title}</p>
-
-                  <button type="button">Ver mais informações</button>
                 </div>
               </Link>
             </Card>
